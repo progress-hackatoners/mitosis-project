@@ -1,0 +1,12 @@
+{
+  "name": "mitosis-components",
+  "version": "0.0.1",
+  "type": "commonjs",
+  "scripts": {
+    "gen": "mitosis build"
+  },
+  "devDependencies": {
+    "@builder.io/mitosis-cli": "^0.0.64",
+    "@builder.io/mitosis": "^0.0.106"
+  }
+}
