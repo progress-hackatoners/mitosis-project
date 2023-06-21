@@ -1,0 +1,6 @@
+- main wrapper - `.k-grid`
+  - toolbar - `<Toolbar>`
+  - table - `div`
+    - header - `.k-grid-header`
+    - content - `.k-grid-content`
+      - body - `.k-grid-table`

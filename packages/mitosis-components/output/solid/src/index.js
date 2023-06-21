@@ -1,1 +1,1 @@
-export * from "./lib/mitosis-components";
+export * from "./grid";

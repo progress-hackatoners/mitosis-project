@@ -4,7 +4,7 @@
   "type": "commonjs",
   "scripts": {
     "compile-config": "tsc mitosis.config.ts --target es5 --module commonjs --skipLibCheck",
-    "gen": "npm run compile-config && mitosis build"
+    "gen": "mitosis build"
   },
   "devDependencies": {
     "@builder.io/eslint-plugin-mitosis": "^0.0.14",
