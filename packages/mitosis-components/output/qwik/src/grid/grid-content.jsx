@@ -1,22 +1,18 @@
 import Colgroup from "./colgroup";
 
-import { Fragment, Slot, component$, h } from "@builder.io/qwik";
+import { Fragment, Slot, component$, h, useStore } from "@builder.io/qwik";
 
 export const GridContent = component$((props) => {
+  const state = useStore({
+    tableClasses: `k-table k-table-${props.size} k-grid-header-table`,
+  });
+
   return (
     <div class="k-grid-content">
-      <table class={tableClasses}>
+      <table class={state.tableClasses}>
         <Colgroup cols={props.colgroup}></Colgroup>
         <tbody class="k-table-tbody">
           <Slot></Slot>
-          <tr class="k-table-row">
-            <td class="k-table-td">1</td>
-            <td class="k-table-td">Row</td>
-          </tr>
-          <tr class="k-table-row k-table-alt-row k-alt">
-            <td class="k-table-td">2</td>
-            <td class="k-table-td">Alt row</td>
-          </tr>
         </tbody>
       </table>
     </div>

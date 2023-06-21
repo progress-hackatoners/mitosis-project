@@ -1,7 +1,10 @@
 <script>
   import Colgroup from "./colgroup.svelte";
 
+  export let size;
   export let colgroup;
+
+  let tableClasses = `k-table k-table-${size} k-grid-header-table`;
 </script>
 
 <div class="k-grid-header">
