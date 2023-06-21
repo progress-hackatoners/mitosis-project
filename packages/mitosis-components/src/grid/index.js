@@ -1,1 +1,2 @@
-export { Grid } from './grid.component';
+import Grid from './grid.lite';
+export { Grid as BaseGrid };

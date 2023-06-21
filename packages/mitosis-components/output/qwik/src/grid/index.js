@@ -1,4 +1,4 @@
-import { Grid } from "./grid.component";
+import Grid from "./grid";
 export {
-  Grid
+  Grid as BaseGrid
 };

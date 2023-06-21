@@ -1,4 +1,4 @@
-import { Grid } from "./grid.component";
+import Grid from "./grid.svelte";
 export {
-  Grid
+  Grid as BaseGrid
 };

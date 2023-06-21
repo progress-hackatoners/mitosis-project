@@ -2,6 +2,7 @@
 	import Counter from './Counter.svelte';
 	import welcome from '$lib/images/svelte-welcome.webp';
 	import welcome_fallback from '$lib/images/svelte-welcome.png';
+	import BaseGrid from '../../../../packages/mitosis-components/output/svelte/src/grid/grid.svelte'
 </script>
 
 <svelte:head>
@@ -24,8 +25,9 @@
 	<h2>
 		try editing <strong>src/routes/+page.svelte</strong>
 	</h2>
-
-	<Counter />
+	<BaseGrid colgroup={[{ width: 100 }, {}].map((i) => i.width)}>
+		Neshto</BaseGrid>
+		<Counter  />
 </section>
 
 <style>
