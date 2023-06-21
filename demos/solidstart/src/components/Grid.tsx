@@ -1,39 +1,48 @@
-import { For, createSignal, mergeProps } from 'solid-js';
-import { BaseGrid } from 'mitosis-components/solid';
+import { Index } from 'solid-js';
+import {
+  BaseGrid,
+  GridHeader,
+  GridHeaderCell,
+  GridContent,
+  GridContentRow,
+  GridContentCell,
+} from 'mitosis-components/solid';
 
 export const Grid = (props: any) => {
-  const [items, setItems] = createSignal([
-    { name: 'Item 1', value: '1' },
-    { name: 'Item 2', value: '2' },
-    { name: 'Item 3', value: '3' },
-    { name: 'Item 4', value: '4' },
-  ]);
+  const colgroup = props.columns.map((i: any) => i.width);
 
-  const toolbar = (
-    <div>
-      <button
-        onClick={() => {
-          setColummns([
-            { width: 200, field: 'name', title: 'Column' },
-            { field: 'value', title: 'Column' },
-          ]);
-        }}
-      >
-        Click Me!
-      </button>
-    </div>
+  const gridHeader = (
+    <GridHeader colgroup={colgroup} size="md">
+      <Index each={props.columns}>
+        {(col) => (
+          <GridHeaderCell onClick={props.sort && props.sort(col)}>
+            {col().title || col().field}
+          </GridHeaderCell>
+        )}
+      </Index>
+    </GridHeader>
   );
 
-  const [columns, setColummns] = createSignal([
-    { width: 100, field: 'name', title: 'Column' },
-    { field: 'value', title: 'Column' },
-  ]);
-
-  const mergedProps = mergeProps({ toolbar }, props);
+  const gridContent = (
+    <GridContent colgroup={colgroup} size="md">
+      <Index each={props.items}>
+        {(item, i) => (
+          <GridContentRow alt={i % 2 === 0}>
+            <Index each={props.columns}>
+              {(col) => (
+                <GridContentCell>{item()[col().field]}</GridContentCell>
+              )}
+            </Index>
+          </GridContentRow>
+        )}
+      </Index>
+    </GridContent>
+  );
 
   return (
-    <BaseGrid colgroup={columns().map((i) => i.width)} {...mergedProps}>
-      <For each={items()}>{(item) => <div>{item.name}</div>}</For>
-    </BaseGrid>
+    <BaseGrid
+      slotGridHeader={gridHeader}
+      slotGridContent={gridContent}
+    ></BaseGrid>
   );
 };
