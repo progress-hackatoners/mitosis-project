@@ -10,5 +10,19 @@
     "@builder.io/eslint-plugin-mitosis": "^0.0.14",
     "@builder.io/mitosis": "^0.0.106",
     "@builder.io/mitosis-cli": "^0.0.64"
+  },
+  "exports": {
+    ".": {
+      "default": "./output"
+    },
+    "./solid": {
+      "default": "./output/solid/src/index.js"
+    },
+    "./svelte": {
+      "default": "./output/svelte/src/index.js"
+    },
+    "./qwik": {
+      "default": "./output/qwik/src/index.js"
+    }
   }
 }

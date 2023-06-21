@@ -1,5 +1,5 @@
 import { For, createSignal, mergeProps } from 'solid-js';
-import { BaseGrid } from 'mitosis-components/output/solid/src/grid';
+import { BaseGrid } from 'mitosis-components/solid';
 
 export const Grid = (props: any) => {
   const [items, setItems] = createSignal([
