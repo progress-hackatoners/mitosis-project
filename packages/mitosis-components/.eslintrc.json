@@ -1,18 +1,15 @@
 {
-  "extends": ["../../.eslintrc.json"],
-  "ignorePatterns": ["!**/*"],
-  "overrides": [
-    {
-      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
-      "rules": {}
-    },
-    {
-      "files": ["*.ts", "*.tsx"],
-      "rules": {}
-    },
-    {
-      "files": ["*.js", "*.jsx"],
-      "rules": {}
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
     }
-  ]
+  },
+  "plugins": ["@builder.io/mitosis"],
+  "extends": [
+    "plugin:@builder.io/mitosis/recommended"
+  ],
+  "rules": {
+    "@builder.io/mitosis/css-no-vars": "error"
+  }
+
 }

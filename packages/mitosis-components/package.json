@@ -3,10 +3,12 @@
   "version": "0.0.1",
   "type": "commonjs",
   "scripts": {
-    "gen": "mitosis build"
+    "compile-config": "tsc mitosis.config.ts --target es5 --module commonjs --skipLibCheck",
+    "gen": "npm run compile-config && mitosis build"
   },
   "devDependencies": {
-    "@builder.io/mitosis-cli": "^0.0.64",
-    "@builder.io/mitosis": "^0.0.106"
+    "@builder.io/eslint-plugin-mitosis": "^0.0.14",
+    "@builder.io/mitosis": "^0.0.106",
+    "@builder.io/mitosis-cli": "^0.0.64"
   }
 }
