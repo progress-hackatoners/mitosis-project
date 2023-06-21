@@ -20,13 +20,13 @@
 
 **Demo apps**
 
-- `nx dev solid` - Start the Solid's development server
-- `nx dev svelte` - Start the Svelte's development server
-- `nx dev qwik` - Start the Qwik's development server
+- `npx nx dev solid` - Start the Solid's development server
+- `npx nx dev svelte` - Start the Svelte's development server
+- `npx nx dev qwik` - Start the Qwik's development server
 
 **Libraries**
 
-- `nx gen mitosis-components` - Generate the output components from _packages/mitosis-components_.
+- `npx nx gen mitosis-components` - Generate the output components from _packages/mitosis-components_.
 
 ## NX Workspace
 
