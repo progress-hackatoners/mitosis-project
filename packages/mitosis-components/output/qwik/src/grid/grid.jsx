@@ -1,15 +1,12 @@
-import Colgroup from "./colgroup";
-
-import { Fragment, Slot, component$, h } from "@builder.io/qwik";
+import { Fragment, component$, h } from "@builder.io/qwik";
 
 export const Grid = component$((props) => {
   return (
     <div class="k-grid">
-      {props.slotToolbar ? (
-        <div class="k-grid-toolbae shtot sym mnogo qk">{props.slotToolbar}</div>
-      ) : null}
-      <Colgroup cols={props.colgroup}></Colgroup>
-      <Slot></Slot>
+      {props.slotToolbar ? <>{props.slotToolbar}</> : null}
+      {props.slotGridHeader}
+      {props.slotGridContent}
+      {props.slotPager ? <>{props.slotPager}</> : null}
     </div>
   );
 });

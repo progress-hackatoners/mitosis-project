@@ -1,20 +1,15 @@
 import * as React from "react";
-import Colgroup from "./colgroup";
 
 function Grid(props) {
   return (
     <div className="k-grid">
-      {props.slotToolbar ? (
-        <>
-          <div className="k-grid-toolbae shtot sym mnogo qk">
-            {props.slotToolbar}
-          </div>
-        </>
-      ) : null}
+      {props.slotToolbar ? <>{props.slotToolbar}</> : null}
 
-      <Colgroup cols={props.colgroup} />
+      {props.slotGridHeader}
 
-      {props.children}
+      {props.slotGridContent}
+
+      {props.slotPager ? <>{props.slotPager}</> : null}
     </div>
   );
 }

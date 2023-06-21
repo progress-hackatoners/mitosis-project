@@ -1,15 +1,12 @@
 import { Show } from "solid-js";
 
-import Colgroup from "./colgroup.jsx";
-
 function Grid(props) {
   return (
     <div class="k-grid">
-      <Show when={props.slotToolbar}>
-        <div class="k-grid-toolbae shtot sym mnogo qk">{props.slotToolbar}</div>
-      </Show>
-      <Colgroup cols={props.colgroup}></Colgroup>
-      {props.children}
+      <Show when={props.slotToolbar}>{props.slotToolbar}</Show>
+      {props.slotGridHeader}
+      {props.slotGridContent}
+      <Show when={props.slotPager}>{props.slotPager}</Show>
     </div>
   );
 }
