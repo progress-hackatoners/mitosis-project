@@ -1,16 +1,17 @@
 import { Show } from '@builder.io/mitosis';
-import Colgroup from './colgroup.lite';
+import GridHeader from './grid-header.lite';
 
 export default function Grid(props) {
   return (
     <div className="k-grid">
       <Show when={props.slotToolbar}>
-        <div className="k-grid-toolbae shtot sym mnogo qk">
-          {props.slotToolbar}
-        </div>
+        {props.slotToolbar}
       </Show>
-      <Colgroup cols={props.colgroup}></Colgroup>
-      {props.children}
+      {props.slotGridHeader}
+      {props.slotGridContent}
+      <Show when={props.slotPager}>
+        {props.slotPager}
+      </Show>
     </div>
   );
 }
