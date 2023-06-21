@@ -9,7 +9,7 @@
   "devDependencies": {
     "@builder.io/eslint-plugin-mitosis": "^0.0.14",
     "@builder.io/mitosis": "^0.0.106",
-    "mitosis-fork-cli": "*"
+    "@builder.io/mitosis-cli": "^0.0.64"
   },
   "exports": {
     ".": {
