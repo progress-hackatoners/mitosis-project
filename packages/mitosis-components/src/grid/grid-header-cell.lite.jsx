@@ -1,4 +1,5 @@
 export default function GridHeaderCell(props) {
+
     return (
         <th className="k-table-th k-header" {...props}>
             <span className="k-cell-inner">

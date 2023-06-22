@@ -7,12 +7,14 @@ export default function GridContent(props) {
 
     return (
         <div className="k-grid-content">
-            <table className={state.tableClasses}>
-                <Colgroup cols={props.colgroup}></Colgroup>
-                <tbody className="k-table-tbody">
-                    {props.children}
-                </tbody>
-            </table>
+            <div className="k-grid-table-wrap">
+                <table className={state.tableClasses}>
+                    <Colgroup cols={props.colgroup}></Colgroup>
+                    <tbody className="k-table-tbody">
+                        {props.children}
+                    </tbody>
+                </table>
+            </div>
         </div>
     );
 }

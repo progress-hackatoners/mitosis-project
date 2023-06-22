@@ -8,10 +8,12 @@
 </script>
 
 <div class="k-grid-content">
-  <table class={tableClasses}>
-    <Colgroup cols={colgroup} />
-    <tbody class="k-table-tbody">
-      <slot />
-    </tbody>
-  </table>
+  <div class="k-grid-table-wrap">
+    <table class={tableClasses}>
+      <Colgroup cols={colgroup} />
+      <tbody class="k-table-tbody">
+        <slot />
+      </tbody>
+    </table>
+  </div>
 </div>

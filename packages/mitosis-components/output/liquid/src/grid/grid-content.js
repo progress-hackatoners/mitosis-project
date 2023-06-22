@@ -1,7 +1,9 @@
 <div class="k-grid-content">
-  <table class="{{tableClasses}}">
-    <colgroup cols="{{colgroup}}"></colgroup>
+  <div class="k-grid-table-wrap">
+    <table class="{{tableClasses}}">
+      <colgroup cols="{{colgroup}}"></colgroup>
 
-    <tbody class="k-table-tbody">{{children}}</tbody>
-  </table>
+      <tbody class="k-table-tbody">{{children}}</tbody>
+    </table>
+  </div>
 </div>

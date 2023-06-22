@@ -9,11 +9,13 @@ function GridContent(props) {
 
   return (
     <div className="k-grid-content">
-      <table className={tableClasses}>
-        <Colgroup cols={props.colgroup} />
+      <div className="k-grid-table-wrap">
+        <table className={tableClasses}>
+          <Colgroup cols={props.colgroup} />
 
-        <tbody className="k-table-tbody">{props.children}</tbody>
-      </table>
+          <tbody className="k-table-tbody">{props.children}</tbody>
+        </table>
+      </div>
     </div>
   );
 }

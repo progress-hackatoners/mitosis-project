@@ -9,12 +9,14 @@ export const GridContent = component$((props) => {
 
   return (
     <div class="k-grid-content">
-      <table class={state.tableClasses}>
-        <Colgroup cols={props.colgroup}></Colgroup>
-        <tbody class="k-table-tbody">
-          <Slot></Slot>
-        </tbody>
-      </table>
+      <div class="k-grid-table-wrap">
+        <table class={state.tableClasses}>
+          <Colgroup cols={props.colgroup}></Colgroup>
+          <tbody class="k-table-tbody">
+            <Slot></Slot>
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 });
