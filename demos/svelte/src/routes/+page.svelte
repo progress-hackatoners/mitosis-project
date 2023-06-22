@@ -31,8 +31,6 @@
 	<link rel="stylesheet" href="https://kendo.cdn.telerik.com/themes/6.4.0/default/default-ocean-blue.css">
 </svelte:head>
 
-<button on:click={clickBtn}>Click to change</button>
-
 <Grid columns={columns}
 		items={items}></Grid>
 

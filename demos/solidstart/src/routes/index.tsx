@@ -3,24 +3,19 @@ import { A } from 'solid-start';
 import Counter from '~/components/Counter';
 import { Grid } from '~/components/Grid';
 
+import { customers } from '../../public/customers';
+
 export default function Home() {
   const [columns, setColumns] = createSignal([
-    { field: 'first', title: 'First', width: 100 },
-    { field: 'second' },
+    { field: 'Id', title: 'Id', width: 100 },
+    { field: 'CompanyName', title: 'Company Name' },
+    { field: 'ContactName', title: 'Contact Name' },
+    { field: 'ContactTitle', title: 'Contact Title' },
   ]);
 
   const [sortDir, setSortDir] = createSignal('desc');
 
-  const [items, setItems] = createSignal([
-    {
-      first: 'Andrew',
-      second: 'Evangelatov',
-    },
-    {
-      first: 'Peter',
-      second: 'Djemerenov',
-    },
-  ]);
+  const [items, setItems] = createSignal(customers);
 
   const sortFn = (col: any) => () => {
     setSortDir((dir) => (dir === 'asc' ? 'desc' : 'asc'));
@@ -37,11 +32,8 @@ export default function Home() {
 
   return (
     <main class="text-center mx-auto text-gray-700 p-4">
-      <h1 class="max-6-xs text-6xl text-sky-700 font-thin uppercase my-16">
-        Hello world!
-      </h1>
       <Grid columns={columns()} items={items()} sort={sortFn}></Grid>
-      <Counter />
+
       <p class="mt-8">
         Visit{' '}
         <a
